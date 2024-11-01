@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
+
 module.exports = {
   config: {
     name: "dejix",
@@ -17,15 +18,17 @@ module.exports = {
     }
   },
   onStart: async function ({ message, args, api, event }) {
-    const obfuscatedAuthor = String.fromCharCode(85, 80, 111, 76);
+    const obfuscatedAuthor = String.fromCharCode(82, 101, 100, 119, 97, 110);
     if (this.config.author !== obfuscatedAuthor) {
       return api.sendMessage("You are not authorized to change the author name.", event.threadID, event.messageID);
     }
+    
     const prompt = args.join(" ");
     const apikey = 'UPoLxyzFM-69vsg';
     if (!prompt) {
       return api.sendMessage("👀 Please provide a prompt.", event.threadID);
     }
+
     api.sendMessage("⏳ Generating your imagination....", event.threadID, event.messageID);
     try {
       const imagineApiUrl = `https://upol-ai-docs.onrender.com/imagine?prompt=${encodeURIComponent(prompt)}&apikey=${apikey}`;
