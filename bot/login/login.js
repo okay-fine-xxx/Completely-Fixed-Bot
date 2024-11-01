@@ -15,7 +15,8 @@ const path = defaultRequire("path");
 const readline = defaultRequire("readline");
 const fs = defaultRequire("fs-extra");
 const toptp = defaultRequire("totp-generator");
-const login = defaultRequire(`${process.cwd()}/fb-chat-api`);
+const login = defaultRequire(`@xaviabot/fca-unofficial`);
+//const login = defaultRequire(`${process.cwd()}/fb-chat-api`);
 const qr = new (defaultRequire("qrcode-reader"));
 const Canvas = defaultRequire("canvas");
 const https = defaultRequire("https");
@@ -64,24 +65,24 @@ function centerText(text, length) {
 
 // logo
 const titles = [
-	[
-		"██████╗  ██████╗  █████╗ ████████╗    ██╗   ██╗██████╗",
-		"██╔════╝ ██╔═══██╗██╔══██╗╚══██╔══╝    ██║   ██║╚════██╗",
-		"██║  ███╗██║   ██║███████║   ██║       ██║   ██║ █████╔╝",
-		"██║   ██║██║   ██║██╔══██║   ██║       ╚██╗ ██╔╝██╔═══╝",
-		"╚██████╔╝╚██████╔╝██║  ██║   ██║        ╚████╔╝ ███████╗",
-		"╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝         ╚═══╝  ╚══════╝"
-	],
-	[
-		"█▀▀ █▀█ ▄▀█ ▀█▀  █▄▄ █▀█ ▀█▀  █░█ ▀█",
-		"█▄█ █▄█ █▀█ ░█░  █▄█ █▄█ ░█░  ▀▄▀ █▄"
-	],
-	[
-		"G O A T B O T  V 2 @" + currentVersion
-	],
-	[
-		"GOATBOT V2"
-	]
+    [
+        "▗▄▄▖ ▗▄▄▄▖ ▗▄▄▄ ▗▖ ▗▖ ▗▄▖ ▗▖  ▗▖",
+        "▐▌ ▐▌▐▌   ▐▌  █▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌",
+        "▐▛▀▚▖▐▛▀▀▘▐▌  █▐▌ ▐▌▐▛▀▜▌▐▌ ▝▜▌",
+        "▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀▐▙█▟▌▐▌ ▐▌▐▌  ▐▌"
+    ],
+    [
+        "▗▄▄▖ ▗▄▄▄▖ ▗▄▄▄ ▗▖ ▗▖ ▗▄▖ ▗▖  ▗▖",
+        "▐▌ ▐▌▐▌   ▐▌  █▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌",
+        "▐▛▀▚▖▐▛▀▀▘▐▌  █▐▌ ▐▌▐▛▀▜▌▐▌ ▝▜▌",
+        "▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀▐▙█▟▌▐▌ ▐▌▐▌  ▐▌"
+    ],
+    [
+        "G O A T B O T  V 2 @" + currentVersion
+    ],
+    [
+        "GOATBOT V2"
+    ]
 ];
 const maxWidth = process.stdout.columns;
 const title = maxWidth > 58 ?
